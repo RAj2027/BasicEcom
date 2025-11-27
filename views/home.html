@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - TheTrend</title>
+  <link rel="stylesheet" href="/public/css/home.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <button class="menu-btn">
+        <i class="ri-menu-line"></i>
+      </button>
+
+      <div class="logo">
+        <h1>TheTrend</h1>
+      </div>
+
+      <div class="header-actions">
+        <button class="icon-btn">
+          <i class="ri-search-line"></i>
+        </button>
+        <a href="/views/cart.html" class="icon-btn">
+          <i class="ri-shopping-cart-line"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#new">New offers</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text-top">
+      </div>
+      <span class="hero-label">LUXURIOUS</span>
+
+      <h2 class="hero-title">STYLISH LIFE</h2>
+
+      <div class="hero-image">
+        <img src="/public/images/models/model.png" alt="Fashion Model" id="hero-model-image">
+      </div>
+
+      <div class="hero-badges">
+        <div class="badge badge-left">
+          <p class="badge-title">ALL TIME BEST</p>
+          <p class="badge-subtitle">OFFERS</p>
+        </div>
+
+        <div class="badge badge-center">
+          <p class="badge-cta">SHOP NOW,</p>
+          <p class="badge-cta">SAVE MORE</p>
+        </div>
+
+        <div class="badge badge-right">
+          <p class="badge-title">CELEBRATE INDIVIDUALITY</p>
+          <p class="badge-subtitle">WITH UNIQUE OUTFITS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <div class="section-container">
+      <div class="categories-grid-layout">
+        <a href="/views/product-list.html" class="category-card category-large">
+          <div class="category-content">
+            <h3 class="category-title">NIKE SOLO SWOOSH</h3>
+            <img src="/public/images/models/model2.png" alt="Nike Solo Swoosh" id="model2-image">
+            <button class="category-btn">Shop Now</button>
+          </div>
+        </a>
+
+        <a href="/views/product-list.html" class="category-card category-large category-featured">
+          <div class="category-content">
+            <h3 class="category-title">JORDAN FLIGHT FLEECE</h3>
+            <img src="/public/images/models/model3.png" alt="Jordan Flight Fleece" id="model3-image">
+            <h2 class="category-overlay-text">STYLISH</h2>
+          </div>
+        </a>
+
+        <a href="/views/product-list.html" class="category-card category-small">
+          <div class="category-content">
+            <h3 class="category-title">NIKE SPORTSWEAR <br>THERMA</h3>
+            <img src="/public/images/models/model4.png" alt="Nike Sportswear Therma" id="model4-image">
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section class="new-arrivals-section">
+    <div class="section-container">
+      <div class="section-header-row">
+        <h2 class="section-title">New arrival</h2>
+        <div class="section-nav">
+          <button class="nav-arrow nav-prev">
+            <i class="ri-arrow-left-s-line"></i>
+          </button>
+          <button class="nav-arrow nav-next">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+          <a href="#products" class="view-all-link">View all</a>
+        </div>
+      </div>
+      <div class="arrivals-grid" id="arrivalsGrid">
+        <div class="loading">Loading new arrivals...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exclusive Offers Section -->
+  <section class="exclusive-offers-section">
+    <div class="section-container">
+      <h2 class="offers-main-title">EXCLUSIVE FASHION OFFERS AWAIT</h2>
+      
+      <div class="offers-content">
+        <div class="offers-image-side">
+          <h3 class="offers-product-title">JORDAN FLIGHT FLEECE</h3>
+          <img src="/public/images/models/model1.png" alt="Jordan Flight Fleece" class="offers-model-image">
+        </div>
+
+        <div class="offers-text-side">
+          <p class="offers-label">SEIZE STYLISH SAVINGS TODAY</p>
+          <h2 class="offers-headline">Save money, save time, and living simplify</h2>
+          <p class="offers-description">
+            Glam Galore is where fashion favorites become accessible with incredible discounts. 
+            Each click in our Offer Section is an invitation to seize stylish savings.
+          </p>
+          <a href="/views/signup.html" class="offers-btn">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2 class="footer-logo">TheTrend</h2>
+          <p class="footer-tagline">Claim your exclusive discount code when you subscribe to our emails</p>
+          <form class="footer-newsletter">
+            <input type="email" placeholder="Your e-mail" class="newsletter-input">
+            <button type="submit" class="newsletter-submit">
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4 class="footer-heading">Support</h4>
+            <ul class="footer-list">
+              <li><a href="#help">Get Help</a></li>
+              <li><a href="#returns">Returns</a></li>
+              <li><a href="#payment">Payment Options</a></li>
+              <li><a href="#gift-card">Gift Card</a></li>
+              <li><a href="#order-status">Order Status</a></li>
+              <li><a href="#size-charts">Size Charts</a></li>
+              <li><a href="#tracking">Order Tracking</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-heading">About Us</h4>
+            <ul class="footer-list">
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#stores">Stores</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#order-status">Order Status</a></li>
+              <li><a href="#size-charts">Size Charts</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-heading">Policies</h4>
+            <ul class="footer-list">
+              <li><a href="#terms">Terms and Conditions</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#cookie">Cookie Policy</a></li>
+              <li><a href="#service-terms">Terms of Service</a></li>
+              <li><a href="#consumer-privacy">Consumer Privacy</a></li>
+              <li><a href="#disclaimer">Disclaimer</a></li>
+              <li><a href="#cookie-preferences">Cookie Preferences</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-heading">Contact</h4>
+            <ul class="footer-list">
+              <li><a href="mailto:info@thetrend.com">Email</a></li>
+              <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+              <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+              <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+              <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 TheTrend • <a href="#terms">Terms & Conditions</a></p>
+        <div class="footer-brand-large">TheTrend</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_URL = 'http://localhost:4000';
+
+    // Load products on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadNewArrivals();
+    });
+
+    // Load new arrivals (vendor-added products)
+    async function loadNewArrivals() {
+      try {
+        const response = await fetch(`${API_URL}/products`);
+        const products = await response.json();
+        
+        // Sort by newest first (assuming products have an id that increases with time)
+        const sortedProducts = products.sort((a, b) => b.id - a.id);
+        
+        displayNewArrivals(sortedProducts);
+      } catch (error) {
+        console.error('Error loading new arrivals:', error);
+        document.getElementById('arrivalsGrid').innerHTML = '<div class="loading">Failed to load products</div>';
+      }
+    }
+
+    function displayNewArrivals(products) {
+      const grid = document.getElementById('arrivalsGrid');
+      
+      if (products.length === 0) {
+        grid.innerHTML = '<div class="loading">No products available</div>';
+        return;
+      }
+
+      // Display up to 4 newest products
+      grid.innerHTML = products.slice(0, 4).map(product => `
+        <a href="/views/order-page.html?id=${product.id}" class="product-card">
+          <div class="product-image">
+            <img src="${product.image || '/public/images/products/default.jpg'}" alt="${product.name}">
+          </div>
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            <p class="product-category">${product.category || 'Fashion'}</p>
+            <p class="product-price">$${parseFloat(product.price).toFixed(2)}</p>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    // Navigation arrows functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevBtn = document.querySelector('.nav-prev');
+      const nextBtn = document.querySelector('.nav-next');
+      
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          document.getElementById('arrivalsGrid').scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          document.getElementById('arrivalsGrid').scrollBy({ left: 300, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

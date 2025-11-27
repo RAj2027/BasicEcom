@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - TheTrend</title>
+  <link rel="stylesheet" href="/public/css/home.css">
+  <link rel="stylesheet" href="/public/css/cart.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <button class="menu-btn">
+        <i class="ri-menu-line"></i>
+      </button>
+
+      <div class="logo">
+        <h1><a href="/views/home.html" style="text-decoration: none; color: inherit;">TheTrend</a></h1>
+      </div>
+
+      <div class="header-actions">
+        <button class="icon-btn">
+          <i class="ri-search-line"></i>
+        </button>
+        <a href="/views/cart.html" class="icon-btn">
+          <i class="ri-shopping-cart-line"></i>
+        </a>
+        <a href="/views/login.html" class="icon-btn">
+          <i class="ri-user-line"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#new">New offers</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-container">
+    <div class="breadcrumb">
+      <a href="/views/home.html">Home</a>
+      <i class="ri-arrow-right-s-line"></i>
+      <span>Cart</span>
+    </div>
+  </div>
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <div class="cart-container">
+      <h1 class="cart-title">YOUR CART</h1>
+
+      <div class="cart-content">
+        <!-- Cart Items -->
+        <div class="cart-items">
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="/public/images/products/shirt2.png" alt="Gradient Graphic T-shirt">
+            </div>
+            <div class="item-details">
+              <div class="item-header">
+                <h3>Thorns Graphic T</h3>
+                <button class="btn-remove" aria-label="Remove item">
+                  <i class="ri-delete-bin-line"></i>
+                </button>
+              </div>
+              <p class="item-size">Size: <span>Large</span></p>
+              <p class="item-color">Color: <span>White</span></p>
+              <div class="item-footer">
+                <p class="item-price">$145</p>
+                <div class="quantity-control">
+                  <button class="btn-quantity" aria-label="Decrease quantity">
+                    <i class="ri-subtract-line"></i>
+                  </button>
+                  <span class="quantity">1</span>
+                  <button class="btn-quantity" aria-label="Increase quantity">
+                    <i class="ri-add-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="/public/images/products/shirt1.png" alt="Checkered Shirt">
+            </div>
+            <div class="item-details">
+              <div class="item-header">
+                <h3>Graphic Print T</h3>
+                <button class="btn-remove" aria-label="Remove item">
+                  <i class="ri-delete-bin-line"></i>
+                </button>
+              </div>
+              <p class="item-size">Size: <span>Medium</span></p>
+              <p class="item-color">Color: <span>Red</span></p>
+              <div class="item-footer">
+                <p class="item-price">$180</p>
+                <div class="quantity-control">
+                  <button class="btn-quantity" aria-label="Decrease quantity">
+                    <i class="ri-subtract-line"></i>
+                  </button>
+                  <span class="quantity">1</span>
+                  <button class="btn-quantity" aria-label="Increase quantity">
+                    <i class="ri-add-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="/public/images/products/jean.png" alt="Skinny Fit Jeans">
+            </div>
+            <div class="item-details">
+              <div class="item-header">
+                <h3>Faded relaxed-fit jeans</h3>
+                <button class="btn-remove" aria-label="Remove item">
+                  <i class="ri-delete-bin-line"></i>
+                </button>
+              </div>
+              <p class="item-size">Size: <span>Large</span></p>
+              <p class="item-color">Color: <span>Blue</span></p>
+              <div class="item-footer">
+                <p class="item-price">$240</p>
+                <div class="quantity-control">
+                  <button class="btn-quantity" aria-label="Decrease quantity">
+                    <i class="ri-subtract-line"></i>
+                  </button>
+                  <span class="quantity">1</span>
+                  <button class="btn-quantity" aria-label="Increase quantity">
+                    <i class="ri-add-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span class="summary-value">$565</span>
+          </div>
+          
+          <div class="summary-row discount">
+            <span>Discount</span>
+            <span class="summary-value">$0.00</span>
+          </div>
+          
+          <div class="summary-row delivery">
+            <span>Delivery Fee</span>
+            <span class="summary-value">$15</span>
+          </div>
+          
+          <div class="summary-divider"></div>
+          
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="summary-value">$467</span>
+          </div>
+
+          <div class="promo-code">
+            <div class="promo-input-wrapper">
+              <i class="ri-price-tag-3-line"></i>
+              <input type="text" placeholder="Add promo code">
+            </div>
+            <button class="btn-apply">Apply</button>
+          </div>
+
+          <button class="btn-checkout">
+            Go to Checkout
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Smooth transitions for cart updates */
+    .cart-item {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .quantity {
+      transition: opacity 0.3s ease;
+    }
+    
+    .delivery-message {
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Remove sticky navbar on cart page */
+    .header {
+      position: relative;
+      top: auto;
+      z-index: auto;
+    }
+  </style>
+
+  <script src="/public/js/cart.js"></script>
+  <script>
+    // Cart Management Functions
+    const API_URL = 'http://localhost:4000';
+    
+    // Load cart on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCart();
+    });
+    
+    // Load cart items from API
+    async function loadCart() {
+      // Get user_id from localStorage
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      const user_id = user.id || 1; // Default to 1 for testing
+      
+      try {
+        const response = await fetch(`${API_URL}/cart/${user_id}`);
+        const cartItems = await response.json();
+        
+        if (response.ok) {
+          displayCartItems(cartItems);
+          updateCartSummary(cartItems);
+          
+          // Hide any existing delivery message if cart is empty
+          if (cartItems.length === 0) {
+            const messageEl = document.querySelector('.delivery-message');
+            if (messageEl) {
+              messageEl.remove();
+            }
+          }
+        } else {
+          console.error('Failed to load cart');
+        }
+      } catch (error) {
+        console.error('Error loading cart:', error);
+        alert('Failed to load cart. Please refresh the page.');
+      }
+    }
+    
+    // Display cart items in the UI
+    function displayCartItems(items) {
+      const cartItemsContainer = document.querySelector('.cart-items');
+      
+      if (!cartItemsContainer) return;
+      
+      if (items.length === 0) {
+        cartItemsContainer.innerHTML = `
+          <div style="text-align: center; padding: 60px 20px;">
+            <i class="ri-shopping-cart-line" style="font-size: 4rem; color: #ccc;"></i>
+            <h2 style="margin-top: 20px; color: #666;">Your cart is empty</h2>
+            <p style="color: #999; margin-top: 10px;">Add some products to get started!</p>
+            <a href="/views/home.html" style="display: inline-block; margin-top: 20px; padding: 14px 40px; background: #000; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600;">
+              Continue Shopping
+            </a>
+          </div>
+        `;
+        return;
+      }
+      
+      cartItemsContainer.innerHTML = items.map(item => {
+        const itemTotal = parseFloat(item.price) * item.qty;
+        return `
+        <div class="cart-item" data-cart-id="${item.id}">
+          <div class="item-image">
+            <img src="${item.image || '/public/images/products/shirt1.png'}" alt="${item.name}">
+          </div>
+          <div class="item-details">
+            <div class="item-header">
+              <h3>${item.name}</h3>
+              <button class="btn-remove" aria-label="Remove item" onclick="removeItem(${item.id})">
+                <i class="ri-delete-bin-line"></i>
+              </button>
+            </div>
+            <p class="item-size">Price: <span>$${parseFloat(item.price).toFixed(2)} each</span></p>
+            <p class="item-color">Total: <span>$${itemTotal.toFixed(2)}</span></p>
+            <div class="item-footer">
+              <div class="quantity-control">
+                <button class="btn-quantity" aria-label="Decrease quantity" onclick="updateQuantity(${item.id}, ${item.qty - 1})" ${item.qty <= 1 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+                  <i class="ri-subtract-line"></i>
+                </button>
+                <span class="quantity">${item.qty}</span>
+                <button class="btn-quantity" aria-label="Increase quantity" onclick="updateQuantity(${item.id}, ${item.qty + 1})">
+                  <i class="ri-add-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      }).join('');
+    }
+    
+    // Update cart summary (totals)
+    function updateCartSummary(items) {
+      const subtotal = items.reduce((sum, item) => sum + (parseFloat(item.price) * item.qty), 0);
+      
+      // No discount by default (can be applied via promo code)
+      const discount = 0;
+      
+      // Free delivery for orders over $100, otherwise $15
+      const deliveryFee = subtotal >= 100 ? 0 : 15;
+      
+      const total = subtotal - discount + deliveryFee;
+      
+      // Update summary values - using specific class selectors
+      const subtotalEl = document.querySelector('.summary-row:not(.discount):not(.delivery):not(.total) .summary-value');
+      const discountEl = document.querySelector('.summary-row.discount .summary-value');
+      const deliveryEl = document.querySelector('.summary-row.delivery .summary-value');
+      const totalEl = document.querySelector('.summary-row.total .summary-value');
+      
+      if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+      if (discountEl) discountEl.textContent = discount > 0 ? `-$${discount.toFixed(2)}` : '$0.00';
+      if (deliveryEl) {
+        deliveryEl.textContent = deliveryFee > 0 ? `$${deliveryFee.toFixed(2)}` : 'FREE';
+        if (deliveryFee === 0) {
+          deliveryEl.style.color = '#10b981';
+          deliveryEl.style.fontWeight = '600';
+        }
+      }
+      if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+      
+      // Show free delivery message if close to threshold
+      if (subtotal > 0 && subtotal < 100) {
+        const remaining = 100 - subtotal;
+        showDeliveryMessage(`Add $${remaining.toFixed(2)} more for FREE delivery!`);
+      } else if (subtotal >= 100) {
+        showDeliveryMessage('🎉 You qualify for FREE delivery!');
+      }
+    }
+    
+    // Show delivery message
+    function showDeliveryMessage(message) {
+      let messageEl = document.querySelector('.delivery-message');
+      if (!messageEl) {
+        messageEl = document.createElement('div');
+        messageEl.className = 'delivery-message';
+        messageEl.style.cssText = 'padding: 12px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; margin-bottom: 15px; text-align: center; color: #166534; font-weight: 600; font-size: 0.9rem;';
+        const summaryEl = document.querySelector('.order-summary');
+        const firstRow = summaryEl.querySelector('.summary-row');
+        if (firstRow) {
+          summaryEl.insertBefore(messageEl, firstRow);
+        }
+      }
+      messageEl.textContent = message;
+    }
+    
+    // Remove item from cart
+    async function removeItem(cartItemId) {
+      if (!confirm('Are you sure you want to remove this item?')) return;
+      
+      try {
+        const response = await fetch(`${API_URL}/cart/delete/${cartItemId}`, {
+          method: 'DELETE'
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Remove item from DOM with animation
+          const cartItem = document.querySelector(`[data-cart-id="${cartItemId}"]`);
+          if (cartItem) {
+            cartItem.style.opacity = '0';
+            cartItem.style.transform = 'translateX(-20px)';
+            setTimeout(() => {
+              loadCart(); // Reload cart
+            }, 300);
+          }
+        } else {
+          alert('Failed to remove item: ' + data.message);
+        }
+      } catch (error) {
+        console.error('Error removing item:', error);
+        alert('Failed to remove item. Please try again.');
+      }
+    }
+    
+    // Update quantity
+    async function updateQuantity(cartItemId, newQty) {
+      if (newQty < 1) {
+        removeItem(cartItemId);
+        return;
+      }
+      
+      // Show loading state on the entire cart item
+      const cartItem = document.querySelector(`[data-cart-id="${cartItemId}"]`);
+      if (cartItem) {
+        cartItem.style.opacity = '0.6';
+        cartItem.style.pointerEvents = 'none';
+      }
+      
+      try {
+        const response = await fetch(`${API_URL}/cart/update/${cartItemId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ qty: newQty })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Reload cart to update all prices and quantities
+          await loadCart();
+        } else {
+          // Restore cart item state on error
+          if (cartItem) {
+            cartItem.style.opacity = '1';
+            cartItem.style.pointerEvents = 'auto';
+          }
+          alert('Failed to update quantity: ' + data.message);
+        }
+      } catch (error) {
+        console.error('Error updating quantity:', error);
+        // Restore cart item state on error
+        if (cartItem) {
+          cartItem.style.opacity = '1';
+          cartItem.style.pointerEvents = 'auto';
+        }
+        alert('Failed to update quantity. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
