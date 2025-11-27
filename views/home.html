@@ -17,7 +17,7 @@
       </button>
 
       <div class="logo">
-        <h1>TheTrend</h1>
+        <h1><a href="/views/home.html" style="color: inherit; text-decoration: none; cursor: pointer;">TheTrend</a></h1>
       </div>
 
       <div class="header-actions">
@@ -26,6 +26,9 @@
         </button>
         <a href="/views/cart.html" class="icon-btn">
           <i class="ri-shopping-cart-line"></i>
+        </a>
+        <a href="/views/profile.html" class="icon-btn" id="profileLink">
+          <i class="ri-user-line"></i>
         </a>
       </div>
     </div>
@@ -286,6 +289,17 @@
         nextBtn.addEventListener('click', () => {
           document.getElementById('arrivalsGrid').scrollBy({ left: 300, behavior: 'smooth' });
         });
+      }
+
+      // Update profile link based on login status
+      const user = JSON.parse(localStorage.getItem('user') || 'null');
+      const profileLink = document.getElementById('profileLink');
+      if (user) {
+        profileLink.href = '/views/profile.html';
+        profileLink.title = `Profile: ${user.username}`;
+      } else {
+        profileLink.href = '/views/login.html';
+        profileLink.title = 'Login';
       }
     });
   </script>

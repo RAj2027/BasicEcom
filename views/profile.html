@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - TheTrend</title>
+  <link rel="stylesheet" href="/public/css/home.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Remove sticky navbar */
+    .header {
+      position: relative;
+      top: auto;
+      z-index: auto;
+    }
+
+    .profile-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      min-height: calc(100vh - 200px);
+    }
+
+    /* Sidebar Navigation */
+    .profile-sidebar {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-menu li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar-menu a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      color: #666;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .sidebar-menu a:hover {
+      background: #f5f5f5;
+      color: #000;
+    }
+
+    .sidebar-menu a.active {
+      background: #000;
+      color: white;
+    }
+
+    .sidebar-menu a i {
+      font-size: 20px;
+    }
+
+    /* Main Content */
+    .profile-main {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .profile-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-title h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 5px 0;
+      color: #000;
+    }
+
+    .profile-title p {
+      color: #999;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .profile-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-secondary, .btn-primary {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: #f5f5f5;
+      color: #666;
+      border: 1px solid #e0e0e0;
+    }
+
+    .btn-secondary:hover {
+      background: #e0e0e0;
+      color: #000;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+    }
+
+    /* User Info Card */
+    .user-info-card {
+      display: flex;
+      gap: 30px;
+      padding: 30px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      border-radius: 16px;
+      margin-bottom: 30px;
+    }
+
+    .user-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: white;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .user-details {
+      flex: 1;
+    }
+
+    .user-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: #000;
+    }
+
+    .user-meta {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .user-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .user-meta-item i {
+      color: #999;
+    }
+
+    .user-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .user-rating i {
+      color: #ffc107;
+    }
+
+    .user-actions-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-action {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+    }
+
+    .btn-dark {
+      background: #000;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #333;
+    }
+
+    .btn-green {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background: #059669;
+    }
+
+    /* Analytics Section */
+    .analytics-section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      color: #000;
+    }
+
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .analytics-card {
+      background: #f9f9f9;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .analytics-value {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: #000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .analytics-label {
+      color: #666;
+      font-size: 14px;
+      margin: 0 0 4px 0;
+    }
+
+    .analytics-sublabel {
+      color: #999;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .info-icon {
+      width: 18px;
+      height: 18px;
+      background: #e0e0e0;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #666;
+      cursor: help;
+    }
+
+    /* Orders Section */
+    .orders-section {
+      margin-top: 40px;
+    }
+
+    .orders-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .order-card {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    .order-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .order-info {
+      flex: 1;
+    }
+
+    .order-id {
+      font-weight: 700;
+      color: #000;
+      margin: 0 0 8px 0;
+    }
+
+    .order-details {
+      display: flex;
+      gap: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .order-status {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .status-completed {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .status-pending {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .status-cancelled {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+
+    .empty-state i {
+      font-size: 64px;
+      margin-bottom: 16px;
+      display: block;
+      color: #ccc;
+    }
+
+    .empty-state h3 {
+      font-size: 20px;
+      margin: 0 0 8px 0;
+      color: #666;
+    }
+
+    .empty-state p {
+      margin: 0 0 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .profile-container {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .profile-main {
+        padding: 20px;
+      }
+
+      .user-info-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .user-avatar {
+        margin: 0 auto;
+      }
+
+      .user-meta {
+        justify-content: center;
+      }
+
+      .user-actions-row {
+        flex-direction: column;
+      }
+
+      .analytics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <button class="menu-btn">
+        <i class="ri-menu-line"></i>
+      </button>
+
+      <div class="logo">
+        <h1><a href="/views/home.html" style="color: inherit; text-decoration: none; cursor: pointer;">TheTrend</a></h1>
+      </div>
+
+      <div class="header-actions">
+        <button class="icon-btn">
+          <i class="ri-search-line"></i>
+        </button>
+        <a href="/views/cart.html" class="icon-btn">
+          <i class="ri-shopping-cart-line"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="/views/home.html#new">New offers</a></li>
+        <li><a href="/views/product-list.html">Products</a></li>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Profile Container -->
+  <div class="profile-container">
+    <!-- Sidebar -->
+    <aside class="profile-sidebar">
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#overview" class="active" onclick="showSection('overview')">
+            <i class="ri-dashboard-line"></i>
+            <span>Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="#orders" onclick="showSection('orders')">
+            <i class="ri-shopping-bag-line"></i>
+            <span>Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="#settings" onclick="showSection('settings')">
+            <i class="ri-settings-3-line"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="logout()">
+            <i class="ri-logout-box-line"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="profile-main">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="profile-title">
+          <h1 id="profileName">Loading...</h1>
+          <p id="profileEmail">customer@example.com</p>
+        </div>
+        <div class="profile-actions">
+          <button class="btn-secondary">
+            <i class="ri-settings-3-line"></i>
+            Options
+          </button>
+          <button class="btn-primary">
+            <i class="ri-edit-line"></i>
+            Edit
+          </button>
+        </div>
+      </div>
+
+      <!-- Overview Section -->
+      <div id="overviewSection">
+        <!-- User Info Card -->
+        <div class="user-info-card">
+          <div class="user-avatar" id="userAvatar">AS</div>
+          <div class="user-details">
+            <h2 class="user-name" id="userName">Anna Smith</h2>
+            <div class="user-meta">
+              <div class="user-rating">
+                <i class="ri-star-fill"></i>
+                <span>4.61</span>
+                <span style="color: #999;">(8 reviews)</span>
+              </div>
+              <div class="user-meta-item">
+                <i class="ri-calendar-line"></i>
+                <span>Joined Aug 2024</span>
+              </div>
+              <div class="user-meta-item">
+                <i class="ri-phone-line"></i>
+                <span id="userPhone">+1234567890</span>
+              </div>
+            </div>
+            <div class="user-actions-row">
+              <button class="btn-action btn-dark" onclick="showSection('orders')">
+                <i class="ri-shopping-bag-line"></i>
+                View Orders
+              </button>
+              <a href="/views/home.html#categories-section" class="btn-action btn-green" style="text-decoration: none;">
+                <i class="ri-shopping-cart-line"></i>
+                Continue Shopping
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="analytics-section">
+          <h3 class="section-title">Analytics</h3>
+          <div class="analytics-grid">
+            <div class="analytics-card">
+              <p class="analytics-label">Total Orders</p>
+              <div class="analytics-value">
+                <span id="totalOrders">0</span>
+                <span class="info-icon">i</span>
+              </div>
+              <p class="analytics-sublabel">All time</p>
+            </div>
+            <div class="analytics-card">
+              <p class="analytics-label">Total Spent</p>
+              <div class="analytics-value">
+                <span id="totalSpent">$0.00</span>
+              </div>
+              <p class="analytics-sublabel">Revenue</p>
+            </div>
+            <div class="analytics-card">
+              <p class="analytics-label">Last Order</p>
+              <div class="analytics-value">
+                <span id="lastOrder" style="font-size: 18px;">No orders yet</span>
+              </div>
+              <p class="analytics-sublabel">Most recent</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders Section -->
+      <div id="ordersSection" style="display: none;">
+        <div class="orders-section">
+          <h3 class="section-title">Order History</h3>
+          <div class="orders-list" id="ordersList">
+            <div class="empty-state">
+              <i class="ri-shopping-bag-line"></i>
+              <h3>No orders yet</h3>
+              <p>Start shopping to see your orders here</p>
+              <a href="/views/product-list.html" class="btn-primary">Browse Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Section -->
+      <div id="settingsSection" style="display: none;">
+        <h3 class="section-title">Account Settings</h3>
+        <p style="color: #666;">Settings functionality coming soon...</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2 class="footer-logo">TheTrend</h2>
+          <p class="footer-tagline">Claim your exclusive discount code when you subscribe to our emails</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 TheTrend • <a href="#terms">Terms & Conditions</a></p>
+        <div class="footer-brand-large">TheTrend</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_URL = 'http://localhost:4000';
+
+    // Load user data on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadUserProfile();
+    });
+
+    // Load user profile
+    function loadUserProfile() {
+      const user = JSON.parse(localStorage.getItem('user') || 'null');
+      
+      if (!user) {
+        // Redirect to login if not logged in
+        window.location.href = '/views/login.html';
+        return;
+      }
+
+      // Update profile information
+      document.getElementById('profileName').textContent = user.username || 'User';
+      document.getElementById('profileEmail').textContent = user.email || '';
+      document.getElementById('userName').textContent = user.username || 'User';
+      
+      // Update avatar with initials
+      const initials = (user.username || 'U').substring(0, 2).toUpperCase();
+      document.getElementById('userAvatar').textContent = initials;
+
+      // Load orders (placeholder - implement when order API is ready)
+      loadOrders(user.id);
+    }
+
+    // Load user orders
+    async function loadOrders(userId) {
+      // Placeholder for order loading
+      // TODO: Implement when order API endpoint is created
+      document.getElementById('totalOrders').textContent = '0';
+      document.getElementById('totalSpent').textContent = '$0.00';
+      document.getElementById('lastOrder').textContent = 'No orders yet';
+    }
+
+    // Show section
+    function showSection(section) {
+      // Hide all sections
+      document.getElementById('overviewSection').style.display = 'none';
+      document.getElementById('ordersSection').style.display = 'none';
+      document.getElementById('settingsSection').style.display = 'none';
+
+      // Remove active class from all menu items
+      document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
+
+      // Show selected section
+      if (section === 'overview') {
+        document.getElementById('overviewSection').style.display = 'block';
+        document.querySelector('a[href="#overview"]').classList.add('active');
+      } else if (section === 'orders') {
+        document.getElementById('ordersSection').style.display = 'block';
+        document.querySelector('a[href="#orders"]').classList.add('active');
+      } else if (section === 'settings') {
+        document.getElementById('settingsSection').style.display = 'block';
+        document.querySelector('a[href="#settings"]').classList.add('active');
+      }
+
+      return false;
+    }
+
+    // Logout function
+    function logout() {
+      if (confirm('Are you sure you want to logout?')) {
+        localStorage.removeItem('user');
+        window.location.href = '/views/login.html';
+      }
+      return false;
+    }
+  </script>
+
+</body>
+</html>
