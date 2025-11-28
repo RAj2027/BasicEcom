@@ -612,26 +612,51 @@ Remove item from cart.
 ### Customer Journey
 
 ```mermaid
-flowchart TD
-    A[Visit Homepage] --> B{Logged In?}
-    B -->|No| C[View Products]
-    B -->|Yes| C
-    C --> D[Click Product]
-    D --> E[View Product Details]
-    E --> F{Add to Cart?}
-    F -->|Yes| G{Logged In?}
-    G -->|No| H[Redirect to Login]
-    G -->|Yes| I[Add to Cart]
-    H --> J[Login/Signup]
-    J --> I
-    I --> K[View Cart]
-    K --> L[Update Quantities]
-    L --> M[Checkout]
-    M --> N[Order Placed]
+flowchart LR
+    subgraph Discovery [" 🔍 Discovery Phase"]
+        A[Visit Homepage]
+        B[View Products]
+        C[Click Product]
+        D[View Product Details]
+    end
+    
+    subgraph Authentication [" 🔐 Authentication"]
+        E{Logged In?}
+        F[Redirect to Login]
+        G[Login/Signup]
+    end
+    
+    subgraph Shopping [" 🛍️ Shopping Phase"]
+        H{Add to Cart?}
+        I[Add to Cart]
+        J[View Cart]
+        K[Update Quantities]
+    end
+    
+    subgraph Checkout [" 💳 Checkout Phase"]
+        L[Checkout]
+        M[Order Placed]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> H
+    H -->|Yes| E
+    E -->|No| F
+    E -->|Yes| I
+    F --> G
+    G --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    H -->|No| B
     
     style A fill:#e3f2fd
-    style N fill:#c8e6c9
-    style H fill:#ffccbc
+    style M fill:#c8e6c9
+    style F fill:#ffccbc
+    style E fill:#f3e5f5
 ```
 
 ### Vendor Journey
